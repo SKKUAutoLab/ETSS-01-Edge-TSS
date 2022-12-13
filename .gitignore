@@ -5,9 +5,28 @@ dist/
 *.egg
 *.py[cod]
 __pycache__/
-*.so
 *~
 
+# PyTorch weights
+*.tar
+*.pth
+*.pt
+*.gz
+*.onnx
+
+
+# TensorRT weights
+*.engine
+*.wts
+
+# Compress file
+*.zip
+*.rar
+*.7zip
+*.so
+
+# PyCharm
+.idea
 /.idea/
 /.jekyll-cache/
 /.sync/
