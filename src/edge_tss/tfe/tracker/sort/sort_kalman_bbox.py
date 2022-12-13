@@ -1,7 +1,19 @@
 # ==================================================================== #
-# File name: sort_kalman_bbox.py
-# Author: Automation Lab - Sungkyunkwan University
-# Date created: 03/30/2021
+# Copyright (C) 2022 - Automation Lab - Sungkyunkwan University
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 # ==================================================================== #
 # from __future__ import annotations
 
@@ -32,7 +44,7 @@ class KalmanBBoxTrack(GMO):
 	def __init__(self, **kwargs):
 		super().__init__(**kwargs)
 
-		# TODO: Define Kalman Filter (constant velocity model)
+		# NOTE: Define Kalman Filter (constant velocity model)
 		self.kf   = KalmanFilter(dim_x=7, dim_z=4)
 		self.kf.F = np.array([[1, 0, 0, 0, 1, 0, 0], [0, 1, 0, 0, 0, 1, 0], [0, 0, 1, 0, 0, 0, 1], [0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 1]])
 		self.kf.H = np.array([[1, 0, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0]])
@@ -139,14 +151,14 @@ class Sort(Tracker):
 		"""
 		self.frame_count += 1  # Should be the same with VideoReader.frame_idx
 		
-		# TODO: Extract and convert bbox from detections for easier use.
+		# NOTE: Extract and convert bbox from detections for easier use.
 		if len(detections) > 0:
 			# dets - a numpy array of detections in the format [[x1,y1,x2,y2,score], [x1,y1,x2,y2,score],...]
 			dets = np.array([np.append(np.float64(d.bbox), np.float64(d.confidence)) for d in detections])
 		else:
 			dets = np.empty((0, 5))
 		
-		# TODO: Get predicted locations from existing trackers.
+		# NOTE: Get predicted locations from existing trackers.
 		trks   = np.zeros((len(self.tracks), 5))
 		to_del = []
 		for t, trk in enumerate(trks):
@@ -156,18 +168,18 @@ class Sort(Tracker):
 				to_del.append(t)
 		trks = np.ma.compress_rows(np.ma.masked_invalid(trks))
 		
-		# TODO: Find 3 lists of matches, unmatched_detections and unmatched_trackers
+		# NOTE: Find 3 lists of matches, unmatched_detections and unmatched_trackers
 		for t in reversed(to_del):
 			self.tracks.pop(t)
 		matched, unmatched_dets, unmatched_trks = self.associate_detections_to_tracks(dets, trks)
 		
-		# TODO: Update matched trackers with assigned detections
+		# NOTE: Update matched trackers with assigned detections
 		self.update_matched_tracks(matched=matched, detections=detections)
 			
-		# TODO: Create and initialise new trackers for unmatched detections
+		# NOTE: Create and initialise new trackers for unmatched detections
 		self.create_new_tracks(unmatched_dets=unmatched_dets, detections=detections)
 		
-		# TODO: Remove dead tracklets
+		# NOTE: Remove dead tracklets
 		self.delete_dead_tracks()
 	
 	def update_matched_tracks(
@@ -219,7 +231,7 @@ class Sort(Tracker):
 			#if (trk.time_since_update < 1) and (trk.hit_streak >= self.min_hits or self.frame_count <= self.min_hits):
 				# ret.append(np.concatenate((d, [trk.id + 1])).reshape(1, -1))  # +1 as MOT benchmark requires positive
 			i -= 1
-			# TODO: Remove dead tracklets
+			# NOTE: Remove dead tracklets
 			if trk.time_since_update > self.max_age:
 				self.tracks.pop(i)
 		

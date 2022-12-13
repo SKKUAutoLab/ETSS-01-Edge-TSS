@@ -1,7 +1,19 @@
 # ==================================================================== #
-# File name: video.py
-# Author: Automation Lab - Sungkyunkwan University
-# Date created: 03/28/2021
+# Copyright (C) 2022 - Automation Lab - Sungkyunkwan University
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 # ==================================================================== #
 import os
 from typing import Optional
@@ -45,7 +57,7 @@ class VideoReader(object):
 		self.num_frames = -1
 		self.frame_idx  = 0
 		
-		# TODO: Setup stream
+		# NOTE: Setup stream
 		if self.stream:
 			self.create_online_stream()
 		elif self.file:
@@ -113,7 +125,7 @@ class VideoReader(object):
 	def create_video_stream(self):
 		""" Create the capture for video
 		"""
-		# TODO: Get path to video file
+		# NOTE: Get path to video file
 		video_file = os.path.join(data_dir, self.dataset, "video", self.file)
 		if is_video_file(file=video_file):
 			self.cap        = cv2.VideoCapture(video_file)
@@ -151,7 +163,7 @@ class VideoWriter(object):
 		self.fourcc       = fourcc
 		self.video_writer = None
 		
-		# TODO: Setup video writer
+		# NOTE: Setup video writer
 		if self.file:
 			self.create_video_writer()
 		
@@ -180,7 +192,7 @@ class VideoWriter(object):
 	def write_frame(self, image: np.ndarray):
 		""" Add one frame to writing video.
 		"""
-		# TODO: Convert to channel last
+		# NOTE: Convert to channel last
 		# DEBUG:
 		# print(f"{self.video_writer=}")
 		# print(f"{image.shape=}")

@@ -1,7 +1,19 @@
 # ==================================================================== #
-# File name: roi.py
-# Author: Automation Lab - Sungkyunkwan University
-# Date created: 03/28/2021
+# Copyright (C) 2022 - Automation Lab - Sungkyunkwan University
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 # ==================================================================== #
 # from __future__ import annotations
 
@@ -42,7 +54,7 @@ class ROI(object):
 		self.shape_type = shape_type
 		self.points     = points
 
-		# TODO: Load ROI points from file
+		# NOTE: Load ROI points from file
 		if self.points is None or len(self.points) < 2:
 			printe("Insufficient number of points in the roi.")
 			raise ValueError
@@ -71,7 +83,7 @@ class ROI(object):
 	) :
 		"""Load roi from external .json file.
 		"""
-		# TODO: Get json file
+		# NOTE: Get json file
 		if dataset:
 			path = os.path.join(data_dir, dataset, "rmois", file)
 		else:
@@ -80,7 +92,7 @@ class ROI(object):
 			printe(f"File not found or given a wrong file type at {path}.")
 			raise FileNotFoundError
 		
-		# TODO: Create moi road_objects
+		# NOTE: Create moi road_objects
 		data       = parse_config_from_json(json_path=path)
 		data       = Munch.fromDict(d=data)
 		rois_data  = data.roi

@@ -1,7 +1,19 @@
 # ==================================================================== #
-# File name: moi.py
-# Author: Automation Lab - Sungkyunkwan University
-# Date created: 03/28/2021
+# Copyright (C) 2022 - Automation Lab - Sungkyunkwan University
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 # ==================================================================== #
 from __future__ import annotations
 
@@ -89,7 +101,7 @@ class MOI(object):
 	):
 		"""Load moi's points from external .json file.
 		"""
-		# TODO: Get json file
+		# NOTE: Get json file
 		if dataset:
 			path = os.path.join(data_dir, dataset, "rmois", file)
 		else:
@@ -98,7 +110,7 @@ class MOI(object):
 			printe(f"File not found or given a wrong file type at {path}.")
 			raise FileNotFoundError
 		
-		# TODO: Create moi road_objects
+		# NOTE: Create moi road_objects
 		data      = parse_config_from_json(json_path=path)
 		data      = Munch.fromDict(d=data)
 		mois_data = data.moi
@@ -150,7 +162,7 @@ class MOI(object):
 	) -> Tuple[int, float]:
 		"""Find the Moi that best matched with the object's track.
 		"""
-		# TODO: Calculate distances between object track and all mois' tracks
+		# NOTE: Calculate distances between object track and all mois' tracks
 		distances = []
 		angles    = []
 		for moi in mois:
@@ -194,7 +206,7 @@ class MOI(object):
 	def draw(self, drawing: np.ndarray):
 		"""Draw the ROI.
 		"""
-		# TODO: Draw MOI's direction
+		# NOTE: Draw MOI's direction
 		pts = self.points.reshape((-1, 1, 2))
 		if self.shape_type == "polygon":
 			cv2.polylines(img=drawing, pts=[pts], isClosed=True, color=self.color, thickness=1, lineType=cv2.LINE_AA)
@@ -204,5 +216,5 @@ class MOI(object):
 			for i in range(len(self.points) - 1):
 				cv2.circle(img=drawing, center=tuple(self.points[i]), radius=3, color=self.color, thickness=-1, lineType=cv2.LINE_AA)
 				
-		# TODO: Draw MOI's id
+		# NOTE: Draw MOI's id
 		cv2.putText(img=drawing, text=f"{self.uuid}", fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=0.75, org=tuple(self.points[-1]), color=self.color, thickness=2)

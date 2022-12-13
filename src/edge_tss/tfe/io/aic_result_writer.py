@@ -1,9 +1,19 @@
 # ==================================================================== #
-# File name: aic_result_writer.py
-# Author: Long H. Pham, Duong N.-N. Tran, and Hung N. Phan
-# Date created: 03/28/2021
+# Copyright (C) 2022 - Automation Lab - Sungkyunkwan University
 #
-# Implement common io operations for text aicity2021 type.
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 # ==================================================================== #
 import os
 import time
@@ -125,7 +135,7 @@ class AICResultWriter(object):
 			vehicles (list):
 				The list of tracked vehicles, using general moving object.
 		"""
-		# TODO: Print all the GMO to the file
+		# NOTE: Print all the GMO to the file
 		for vehicle in vehicles:
 			gen_time = format((vehicle.last_timestamp - self.start_time), ".2f")
 			frame_id = vehicle.last_frame_index
@@ -159,7 +169,7 @@ def compress_all_result(
 	output_name = os.path.join(output_dir, f"{output_name}.txt")
 	compress_writer = open(output_name, "w")
 
-	# TODO: Get result from each file
+	# NOTE: Get result from each file
 
 	for video_name, video_id in video_map.items():
 		video_result_path = os.path.join(output_dir, f"{video_name}.txt")
@@ -168,7 +178,7 @@ def compress_all_result(
 			printe(f"The result of {video_result_path} is not exist")
 			continue
 
-		# TODO: Read result
+		# NOTE: Read result
 		results = []
 		with open(video_result_path) as f:
 			line = f.readline()
@@ -185,10 +195,10 @@ def compress_all_result(
 					results.append(result)
 				line = f.readline()
 
-		# TODO: Sort result
+		# NOTE: Sort result
 		results = sorted(results, key=itemgetter("gen_time", "frame_id", "movement_id"))
 
-		# TODO: write result
+		# NOTE: write result
 		for result in results:
 			compress_writer.write(f"{result['gen_time']} ")
 			compress_writer.write(f"{result['video_id']} ")

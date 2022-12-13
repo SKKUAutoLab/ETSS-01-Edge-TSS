@@ -1,7 +1,19 @@
 # ==================================================================== #
-# File name: image.py
-# Author: Automation Lab - Sungkyunkwan University
-# Date created: 03/27/2021
+# Copyright (C) 2022 - Automation Lab - Sungkyunkwan University
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 # ==================================================================== #
 from typing import Tuple
 from typing import Union
@@ -71,7 +83,7 @@ def padded_resize_image(
 	else:
 		images = letterbox(images, new_shape=size)[0]
 
-	# TODO: Convert
+	# NOTE: Convert
 	# image = image[:, :, ::-1].transpose(2, 0, 1)  # BGR to RGB, to 3x416x416
 	# image = image[:, :, ::-1]  # BGR to RGB, to 3x416x416
 	images = np.ascontiguousarray(images)

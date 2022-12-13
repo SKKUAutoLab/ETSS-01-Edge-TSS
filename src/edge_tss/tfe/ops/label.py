@@ -1,7 +1,19 @@
 # ==================================================================== #
-# File name: bbox.py
-# Author: Automation Lab - Sungkyunkwan University
-# Date created: 03/27/2021
+# Copyright (C) 2022 - Automation Lab - Sungkyunkwan University
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 # ==================================================================== #
 from typing import *
 
@@ -34,7 +46,7 @@ def get_label(
 def get_majority_label(object_labels: List[Dict]) -> Dict:
 	"""Get the most popular label of the road_objects.
 	"""
-	# TODO: Count number of appearance of each label.
+	# NOTE: Count number of appearance of each label.
 	unique_labels = Munch()
 	label_voting  = Munch()
 	for label in object_labels:
@@ -46,6 +58,6 @@ def get_majority_label(object_labels: List[Dict]) -> Dict:
 			unique_labels[key] = label
 			label_voting[key]  = 1
 			
-	# TODO: get key (label's id) with max value
+	# NOTE: get key (label's id) with max value
 	max_id = max(label_voting, key=label_voting.get)
 	return unique_labels[max_id]
