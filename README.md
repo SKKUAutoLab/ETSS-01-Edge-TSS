@@ -1,5 +1,8 @@
 # Edge-TSS
 
+#### GitHub Stats
+![](https://img.shields.io/github/downloads/SKKU-AutoLab-VSW/Edge-TSS/total.svg?style=for-the-badge)
+
 The **official** source code for the project _**"An Intelligent System For 24/7 
 Real-Time Traffic Surveillance on Edge Devices"**_.
 
