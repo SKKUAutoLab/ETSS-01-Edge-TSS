@@ -5,7 +5,7 @@
 
 ---
 
-# Run from Docker
+# A. Run from Docker
 
 ---
 
@@ -55,7 +55,7 @@ After more than 2-3 hours, we get the result:
 
 ---
 
-# Run from source
+# B. Run from source
 
 ---
 
@@ -144,7 +144,7 @@ Edge-TSS/src/aic23/track_5/data/outputs_s2_v8_det_v8_iden/final_result_s2.txt
 
 ---
 
-# Training Dataset
+# C. Training Dataset
 
 ---
 
