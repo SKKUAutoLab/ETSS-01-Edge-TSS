@@ -108,7 +108,7 @@ Edge-TSS
 
 ##### a. Download weight 
 
-Download weight from [Release](https://www.google.com) then put it into **Edge-TSS/src/aic23/track_5/models_zoo**.
+Download weight from [Release](https://o365skku-my.sharepoint.com/:f:/g/personal/duongtran_o365_skku_edu/Eo2nfe_g62VNocpi_6mOIjsBFPbXaDiVat1C7vaJ6HLJ_g?e=e5tjcB) then put it into **Edge-TSS/src/aic23/track_5/models_zoo**.
 
 The folder structure should be as following:
 ```
@@ -150,8 +150,8 @@ Edge-TSS/src/aic23/track_5/data/outputs_s2_v8_det_v8_iden/final_result_s2.txt
 
 ##### a. Dataset for the Detector
 
-Download dataset for Detector from [link](https://www.google.com).
+Download dataset for Detector from [link](https://o365skku-my.sharepoint.com/:f:/g/personal/duongtran_o365_skku_edu/Eo2nfe_g62VNocpi_6mOIjsBFPbXaDiVat1C7vaJ6HLJ_g?e=e5tjcB).
 
 ##### b. Dataset for the Identifier
 
-Download dataset for Identifier from [link](https://www.google.com).
+Download dataset for Identifier from [link](https://o365skku-my.sharepoint.com/:f:/g/personal/duongtran_o365_skku_edu/Eo2nfe_g62VNocpi_6mOIjsBFPbXaDiVat1C7vaJ6HLJ_g?e=e5tjcB).
