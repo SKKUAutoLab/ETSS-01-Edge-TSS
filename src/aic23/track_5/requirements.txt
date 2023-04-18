@@ -1,0 +1,44 @@
+git-lfs               # An open source Git extension for versioning large files.
+munch
+psutil
+IPython
+seaborn
+thop
+poetry            # Python packaging and dependency management made easy.
+setuptools           
+pynvml            # Python Bindings for the NVIDIA Management Library.
+markdown          # Python implementation of Markdown.
+mkdocs            # Project documentation with Markdown.
+mkdocs-material   # A Material Design theme for mkdocs.
+mkdocstrings      # Automatic documentation from sources, for MkDocs.
+sphinx            # Sphinx is a tool that makes it easy to create intelligent and beautiful documentation.
+sphinx-paramlinks # A Sphinx extension which allows :param: directives within Python documentation to be linkable.
+albumentations
+ffmpeg-python     # Python bindings for FFmpeg with complex filtering support.
+opencv-python==4.5.5.62  # Computer vision and machine learning software library.
+opencv-contrib-python==4.5.5.62
+requests          # Requests is an elegant and simple HTTP library for Python, built with ♥
+matplotlib        # Publication quality figures in Python.
+tensorboard       # TensorFlow's Visualization Toolkit.
+einops            # A new flavour of deep learning operations.
+flopco-pytorch    # FLOPs and other statistics COunter for Pytorch neural networks.
+piqa              # PyTorch Image Quality Assessment package.
+pyiqa             # PyTorch Toolbox for Image Quality Assessment.
+torchmetrics      # Collection of PyTorch native metrics for easy evaluating machine learning models.
+ray[tune]         # Ray is a fast and simple framework for building and running distributed applications.
+filterpy          # Kalman filters and other optimal and non-optimal estimation filters in Python.
+numpy             # The fundamental package for scientific computing with Python.
+scikit-image      # Image processing in Python.
+scikit-learn      # A set of python modules for machine learning and data mining.
+scipy             # Scientific Library for Python.
+PyYAML            # YAML parser and emitter for Python.
+click             # Click is a Python package for creating beautiful command line interfaces.
+multipledispatch  # Multiple dispatch.
+protobuf          # Protocol Buffers Google's data interchange format.
+pyhumps           # Convert strings (and dictionary keys) between snake case, camel case and pascal case in Python.
+sortedcontainers  # Python Sorted Container Types: SortedList, SortedDict, and SortedSet.
+typing-extensions # Backported and Experimental Type Hints for Python 3.7+.
+validators        # Python Data Validation for Humans.
+xmltodict         # Makes working with XML feel like you are working with JSON.
+rich              # Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal.
+tqdm              # Fast, Extensible Progress Meter.
