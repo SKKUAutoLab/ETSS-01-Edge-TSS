@@ -5,6 +5,58 @@
 
 ---
 
+# Run from Docker
+
+---
+
+##### a. Data download
+
+Go to the website of AI-City Challenge to get the dataset.
+
+- https://www.aicitychallenge.org/2023-data-and-evaluation/
+
+Download dataset to the folder **<folder_test_dataset>**
+
+The dataset folder structure should be as following:
+
+```
+<folder_test_dataset>
+│   ├── videos
+│   │   ├── 001
+│   │   ├── 002
+...
+```
+
+##### b. Load Docker
+
+Change the **<folder_test_dataset>** with your path and run:
+
+```shell
+docker run  \
+    --ipc=host  \
+    --gpus all   \
+    -v <folder_test_dataset>:/usr/src/aic23-track_5/data   \
+    -it supersugar/skku_automation_lab_aic23_track_5:latest
+```
+
+##### c. Run inference
+
+And the running script to get the result
+
+```shell
+bash script/run_track_5_s2_docker.sh 
+```
+
+##### d. Get the result
+After more than 2-3 hours, we get the result:
+```
+<folder_test_dataset>/outputs_s2_v8_det_v8_iden/final_result_s2.txt
+```
+
+---
+
+# Run from source
+
 ---
 
 #### I. Installation
@@ -12,11 +64,14 @@
 1. Download & install Miniconda or Anaconda from https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html
 
 
-2. Open new Terminal, create new conda environment named **aic22track1** and activate it with following commands:
-```shell
-conda env create -f setup/aic22track1_py3.9_torch1.10.1.yml 
+2. Open new Terminal, create new conda environment named **aic23_track_5** and activate it with following commands:
 
-conda activate aic22track1
+```shell
+conda create --name aic23_track_5 python=3.10
+
+conda activate aic23_track_5
+
+pip install -r requirements.txt
 ```
 
 ---
@@ -28,28 +83,22 @@ conda activate aic22track1
 
 Go to the website of AI-City Challenge to get the dataset.
 
-- https://www.aicitychallenge.org/2022-data-and-evaluation/
+- https://www.aicitychallenge.org/2023-data-and-evaluation/
 
 ##### b. Video data import
 
-Add video files to **AIC22_Track_1_MTMC/projects/tss/data/aic22_mtmc/dataset_a**.
+Add video files to **Edge-TSS/src/aic23/track_5/configs/solution_2_v8_det_v8_iden_image.yaml**.
    
 The program folder structure should be as following:
 
 ```
-AIC22_Track_1_MTMC
-├── projects
-│   ├──tss
-│   │   ├── data
-│   │   │   └── aic22_mtmc
-│   │   │       ├── dataset_a
-│   │   │       │   ├── c041
-│   │   │       │   ├── c042
-│   │   │       │   ├── c043
-│   │   │       │   ├── c044
-│   │   │       │   ├── c045
-│   │   │       │   └── c046
-│   │   │       ├── outputs
+Edge-TSS
+├── src
+│   ├──aic23
+│   │   ├── track_5
+│   │   │   └── data
+│   │   │       └── videos
+│   │   │  
 ...
 ```
 
@@ -59,15 +108,22 @@ AIC22_Track_1_MTMC
 
 ##### a. Download weight 
 
-Download weight from [Release](https://o365skku-my.sharepoint.com/:u:/g/personal/duongtran_o365_skku_edu/EWSZTI_H2-VLshgNwa2RlmYBQW4DyCuk5WvV17cd1p9Zjw?e=LFViMC) then put it into **AIC22_Track_1_MTMC/models_zoo**.
+Download weight from [Release](https://www.google.com) then put it into **Edge-TSS/src/aic23/track_5/models_zoo**.
 
 The folder structure should be as following:
 ```
-AIC22_Track_1_MTMC
-├── models_zoo
-│   └──pretrained
-│       ├── reid
-│       └── detector
+Edge-TSS
+├── src
+│   ├──aic23
+│   │   ├── track_5
+│   │   │   ├── models_zoo
+│   │   │   │   └──yolov8
+│   │   │   │       ├── yolov8x6_1280_1cls_track_5_filtered_helmet
+│   │   │   │       ├── yolov8x6_320_7cls_crop_both_v2
+│   │   │   │       ├── yolov8x6_384_7cls_crop_both_v1
+│   │   │   │       ├── yolov8x6_448_7cls_crop_both_v1
+│   │   │   │       ├── yolov8x6_512_7cls_crop_both_v1
+│   │   │   │       └── yolov8x6_576_7cls_crop_both_v1
 ```
 
 ##### b. Run inference
@@ -75,11 +131,27 @@ AIC22_Track_1_MTMC
 And the running script to get the result
 
 ```shell
-bash projects/tss/runs/run_track_mtmc.sh 
+cd Edge-TSS/src/aic23/track_5/
+
+bash script/run_track_5_s2_docker.sh 
 ```
 
 ##### c. Get the result
 After more than 2-3 hours, we get the result:
 ```
-AIC22_Track_1_MTMC/projects/tss/data/aic22_mtmc/outputs/mtmc_result.txt
+Edge-TSS/src/aic23/track_5/data/outputs_s2_v8_det_v8_iden/final_result_s2.txt
 ```
+
+---
+
+# Training Dataset
+
+---
+
+##### a. Dataset for the Detector
+
+Download dataset for Detector from [link](https://www.google.com).
+
+##### b. Dataset for the Identifier
+
+Download dataset for Identifier from [link](https://www.google.com).
