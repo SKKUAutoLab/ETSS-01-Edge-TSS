@@ -5,6 +5,10 @@
 
 ---
 
+We got the first rank in 2023 AI City Challenge - Track 5
+
+![2023 AI City Challenge - Track 5](data/aic23_track5_final_rank.png "2023 AI City Challenge - Track 5")
+
 # A. Run from Docker
 
 ---
