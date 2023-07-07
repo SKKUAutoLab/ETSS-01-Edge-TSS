@@ -1,7 +1,6 @@
 git-lfs               # An open source Git extension for versioning large files.
 munch
 psutil
-IPython
 seaborn
 thop
 poetry            # Python packaging and dependency management made easy.
