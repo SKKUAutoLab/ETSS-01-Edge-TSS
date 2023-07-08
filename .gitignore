@@ -1,4 +1,4 @@
-# general things to ignore
+# general things to ignore for project
 build/
 dist/
 *.egg-info/
