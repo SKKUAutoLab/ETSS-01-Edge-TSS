@@ -12,11 +12,11 @@ weather conditions.
 
 
 ## Getting Started
-TBA...
+TBA ...
 
 
 ## Runs
-TBA...
+TBA ...
 
 
 ## Acknowledgement
