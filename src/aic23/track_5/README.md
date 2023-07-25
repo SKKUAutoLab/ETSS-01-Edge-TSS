@@ -93,7 +93,7 @@ Go to the website of AI-City Challenge to get the dataset.
 
 ##### b. Video data import
 
-Add video files to **Edge-TSS/src/aic23/track_5/configs/solution_2_v8_det_v8_iden_image.yaml**.
+Add video files to **Edge-TSS/src/aic23/track_5/data/**.
    
 The program folder structure should be as following:
 
