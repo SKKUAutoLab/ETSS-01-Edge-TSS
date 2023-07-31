@@ -10,6 +10,7 @@ from tqdm import tqdm
 
 from one.core import AppleRGB
 
+
 def make_dir(folder_path):
 	if not os.path.isdir(folder_path):
 		os.makedirs(folder_path)
@@ -149,6 +150,7 @@ def draw_videos():
 		make_dir(video_folder_ou)
 
 		draw_one_video(index_video, video_folder_in, video_folder_ou, gth)
+
 
 
 def main():
