@@ -10,14 +10,11 @@ The goal of this project is to develop a state-of-the-art traffic surveillance
 system on edge devices for real-time information extraction under various 
 weather conditions.
 
-
 ## Getting Started
 TBA ...
 
-
 ## Runs
 TBA ...
-
 
 ## Acknowledgement
 This project is supported by the Institute for Information & Communications 
