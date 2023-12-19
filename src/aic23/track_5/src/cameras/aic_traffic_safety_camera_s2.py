@@ -447,7 +447,7 @@ class AICTrafficSafetyCameraS2(BaseCamera):
 
 		# NOTE: Run identification
 		with torch.no_grad():  # phai them cai nay khong la bi memory leak
-			for pickle_path in tqdm(data_loader, desc="Identification process"):
+			for pickle_path in data_loader:
 
 				# Init parameter
 				basename       = os.path.basename(pickle_path)
