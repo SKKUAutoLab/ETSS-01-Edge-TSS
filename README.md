@@ -3,8 +3,7 @@
 #### GitHub Stats  
 ![](https://img.shields.io/github/downloads/SKKU-AutoLab-VSW/Edge-TSS/total.svg)  
   
-The **official** source code for the project _**"An Intelligent System For 24/7   
-Real-Time Traffic Surveillance on Edge Devices"**_.  
+The **official** source code for the project _**"An Intelligent System For 24/7  Real-Time Traffic Surveillance on Edge Devices"**_.  
 
 ## Project Goal
 
@@ -22,20 +21,28 @@ Traffic conditions can change rapidly, influenced by factors such as time of day
 
 The Edge Traffic Surveillance System Project is more than a traffic management solution; it's a step towards smarter cities. By enhancing our ability to manage traffic efficiently, we aim to reduce congestion, minimize accident response times, lower pollution levels, and improve the overall quality of urban living.
 
+
 ## Getting Started  
 
 TBA ...  
   
 ## Runs  
 
-Current module of project:
+Current modules of project:
 - [ETSS-02-VehicleDetTrack](https://github.com/SKKU-AutoLab-VSW/ETSS-02-VehicleDetTrack)
 - [ETSS-03-Lane](https://github.com/SKKU-AutoLab-VSW/ETSS-03-LaneDet)
 - [ETSS-04-SpeedEst](https://github.com/SKKU-AutoLab-VSW/ETSS-04-SpeedEst)
 - .
 - .
 - [ETSS-07-ImageEnhance](https://github.com/SKKU-AutoLab-VSW/ETSS-07-ImageEnhance)
+- [ETSS-08-Data](https://github.com/SKKU-AutoLab-VSW/ETSS-08-Data)
+- [Realistic-Traffic-Surveillance_GeneratedSample](https://github.com/SKKU-AutoLab-VSW/Realistic-Traffic-Surveillance_GeneratedSample)
   
 ## Acknowledgement  
+
 This project is supported by the Institute for Information & Communications   
 Technology Promotion (IITP) grant funded by the Korea government (MSIP) (2021-0-01364).
+
+## Citation 
+
+TBA ...  
