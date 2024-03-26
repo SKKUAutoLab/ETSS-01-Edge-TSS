@@ -110,12 +110,12 @@ Download weight from [Release](https://o365skku-my.sharepoint.com/:f:/g/personal
 
 The folder structure should be as following:
 ```
-Edge-TSS
+ETSS-01-Edge-TSS
 ├── src
 │   ├──aic24
 │   │   ├── track_5
 │   │   │   ├── models_zoo
-│   │   │   │   └──yolov8 
+│   │   │   │   └──aic24 
 │   │   │   │       ├── kmeans_cluster
 │   │   │   │       ├── yolov8x_1536_1cls_track_5_24_v2
 │   │   │   │       ├── yolov8x_320_9cls_track_5_24_crop_train_equal_val_v4_videos_gr_0
