@@ -85,14 +85,14 @@ Go to the website of AI-City Challenge to get the dataset.
 
 ##### b. Video data import
 
-Add video files to **Edge-TSS/src/aic23/track_5/data/**.
+Add video files to **Edge-TSS/src/aic24/track_5/data/**.
    
 The program folder structure should be as following:
 
 ```
 Edge-TSS
 ├── src
-│   ├──aic23
+│   ├──aic24
 │   │   ├── track_5
 │   │   │   └── data
 │   │   │       └── videos
@@ -106,7 +106,7 @@ Edge-TSS
 
 ##### a. Download weight 
 
-Download weight from [Release](https://o365skku-my.sharepoint.com/:f:/g/personal/duongtran_o365_skku_edu/Eo2nfe_g62VNocpi_6mOIjsBFPbXaDiVat1C7vaJ6HLJ_g?e=e5tjcB) then put it into **Edge-TSS/src/aic23/track_5/models_zoo**.
+Download weight from [Release](https://o365skku-my.sharepoint.com/:f:/g/personal/duongtran_o365_skku_edu/Eo2nfe_g62VNocpi_6mOIjsBFPbXaDiVat1C7vaJ6HLJ_g?e=e5tjcB) then put it into **Edge-TSS/src/aic24/track_5/models_zoo**.
 
 The folder structure should be as following:
 ```
@@ -137,7 +137,7 @@ bash script/run_track_5_docker.sh
 ##### c. Get the result
 After more than 2-3 hours, we get the result:
 ```
-Edge-TSS/src/aic23/track_5/data/output_aic24/final_result.txt
+Edge-TSS/src/aic24/track_5/data/output_aic24/final_result.txt
 ```
 
 ---
