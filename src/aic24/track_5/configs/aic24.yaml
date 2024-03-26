@@ -73,7 +73,6 @@ identifier:
     # Number of classes.
   weights:
   - - "models_zoo/aic24/yolov8x_320_9cls_track_5_24_crop_train_equal_val_v4_videos_gr_0/weights/best.pt"
-    - "models_zoo/aic24/yolov8x_448_9cls_track_5_24_crop_train_equal_val_v4_videos_gr_0/weights/best.pt"
   - - "models_zoo/aic24/yolov8x_320_9cls_track_5_24_crop_train_equal_val_v4_videos_gr_1/weights/best.pt"
     - "models_zoo/aic24/yolov8x_448_9cls_track_5_24_crop_train_equal_val_v4_videos_gr_1/weights/best.pt"
     - "models_zoo/aic24/yolov8x_512_9cls_track_5_24_crop_train_equal_val_v4_videos_gr_1/weights/best.pt"
