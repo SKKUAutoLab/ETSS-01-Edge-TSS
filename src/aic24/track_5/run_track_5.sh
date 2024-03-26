@@ -29,13 +29,13 @@ cp -f $DIR_TSS"/configs/class_labels_1cls.json" $DIR_TSS"/data/class_labels_1cls
 cp -f $DIR_TSS"/configs/class_labels_9cls.json" $DIR_TSS"/data/class_labels_9cls.json"
 
 # NOTE: EXTRACTION
-echo "**********"
-echo "EXTRACTION"
-echo "**********"
-python utilities/extract_frame.py  \
-    --source $DIR_DATA"/videos/" \
-    --destination $DIR_DATA"/images/" \
-    --verbose
+#echo "**********"
+#echo "EXTRACTION"
+#echo "**********"
+#python utilities/extract_frame.py  \
+#    --source $DIR_DATA"/videos/" \
+#    --destination $DIR_DATA"/images/" \
+#    --verbose
 
 # NOTE: DETECTION
 echo "*********"
@@ -48,13 +48,13 @@ python main.py  \
     --run_image  \
     --config $DIR_TSS"/configs/aic24.yaml"
 
-
-#echo "*****************"
-#echo "WRITE FINAL RESULT"
-#echo "*****************"
-#python main.py  \
-#    --write_final  \
-#    --config $DIR_TSS"/configs/aic24.yaml"
+# NOTE: WRITE FINAL RESULT
+echo "*****************"
+echo "WRITE FINAL RESULT"
+echo "*****************"
+python main.py  \
+    --write_final  \
+    --config $DIR_TSS"/configs/aic24.yaml"
 
 
 echo "###########################"

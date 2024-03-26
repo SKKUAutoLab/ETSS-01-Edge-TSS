@@ -27,9 +27,6 @@ CAMERAS         = Factory(name="cameras")
 DETECTORS       = Factory(name="object_detectors")
 IDENTIFICATIONS = Factory(name="identifications")
 HEURISTICS      = Factory(name="heuristics")
-TRACKERS        = Factory(name="trackers")
-MATCHERS        = Factory(name="matchers")
-ANALYZERS       = Factory(name="analyzers")
 
 # MARK: - File
 

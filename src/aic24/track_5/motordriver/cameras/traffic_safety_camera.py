@@ -37,31 +37,19 @@ import torch
 import numpy as np
 from tqdm import tqdm
 
-from analyses.analyzer import BaseAnalyzer
 from core.data.class_label import ClassLabels
 from core.io.filedir import is_basename
 from core.io.filedir import is_json_file
 from core.io.frame import FrameLoader
 from core.io.frame import FrameWriter
 from core.io.picklewrap import PickleLoader
-from core.io.video import is_video_file
 from core.io.video import VideoLoader
-from core.objects.general_object import GeneralObject
-from core.objects.gmo import GMO
-from core.objects.moving_model import MovingState
-from core.utils.bbox import bbox_xyxy_to_cxcywh_norm
-from core.utils.label import get_label
 from core.utils.rich import console
 from core.utils.constants import AppleRGB
 from core.objects.instance import Instance
-from core.factory.builder import CAMERAS, TRACKERS, MATCHERS, ANALYZERS
+from core.factory.builder import CAMERAS
 from core.factory.builder import DETECTORS
 from detectors.detector import BaseDetector
-from trackers.tracker import Tracker
-from matcher.matcher import BaseMatcher
-from matcher.moi import MOI
-from matcher.roi import ROI
-from heuristic.heuristic_face import HeuristicFace
 
 from configuration import (
 	data_dir,
@@ -241,21 +229,6 @@ class TrafficSafetyCamera(BaseCamera):
 				self.identifier.append(DETECTORS.build(**identifier))
 			else:
 				raise ValueError(f"Cannot initialize detector with {identifier}.")
-
-	def init_heuristic(self, heuristic: Union[HeuristicFace, dict]):
-		"""Initialize heuristic.
-
-		Args:
-			heuristic (Heuristic, dict):
-				Heuristic object or a heuristic's config dictionary.
-		"""
-		console.log(f"Initiate Heuristic.")
-		if isinstance(heuristic, HeuristicFace):
-			self.heuristic = heuristic
-		elif isinstance(heuristic, dict):
-			self.heuristic = HeuristicFace(**heuristic)
-		else:
-			raise ValueError(f"Cannot initialize heuristic with {heuristic}.")
 
 	def init_data_loader(self, data_loader_cfg: dict):
 		"""Initialize data loader.
@@ -842,8 +815,8 @@ class TrafficSafetyCamera(BaseCamera):
 
 			# NOTE: identification
 			if self.process["function_heuristic"]:
-				if self.heuristic is None:
-					self.init_heuristic(heuristic=self.heuristic_cfg)
+				# if self.heuristic is None:
+				# 	self.init_heuristic(heuristic=self.heuristic_cfg)
 				self.run_heuristic()
 
 		# NOTE: writing final result
