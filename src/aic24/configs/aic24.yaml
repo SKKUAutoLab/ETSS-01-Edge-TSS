@@ -1,0 +1,156 @@
+---
+dataset: &dataset "aic24_trafficsafety"
+# Dataset name. It is also the name of the directory inside `data_dir`.
+name: &camera_name "aic24"
+# Camera name is also used as the unique ID (NO FILE EXTENSION).
+id_: *camera_name
+# Camera's unique ID.
+
+data:
+  type: "*.jpg"
+  # Video file or image folder. By default, assume all video are put inside
+  stream: null
+  # If we run directly with the input stream, `stream` must be of some value.
+  # By default, `null` means run with video file defined in `path`.
+  shape: &shape [960, 1280, 3]
+  # Input size as [H, W, C].
+  frame_rate: &frame_rate 10
+  # Frame rate of the video.
+  process_num: 3
+  # Number of processes which runs in parallel
+
+data_loader:
+  data: "images"
+  # Data source. Can be a path to an image file, a directory, a video, or
+  # a stream. It can also be a pathname pattern to images.
+  batch_size: &batch_size 10
+  # Number of samples in one forward & backward pass.
+  data_path: [1, 100]
+  # Path to the dataset
+  # - video: *.mp4
+  # - images: dir
+  queue_size: *batch_size
+  # Number of slot in the queue to store the frame
+
+detector:
+  name: "yolov8"
+  # Name of the main model for detector
+  model_cfg:
+  # Detector model config.
+    cfg: "yolov8x6.yaml"
+    # YOLOv5 variances.
+    nc: 80
+    # Number of classes.
+  weights: "models_zoo/aic24/yolov8x_1536_1cls_track_5_24_23_v2/weights/best.pt"
+  # Pretrained weights file.
+  shape: [1536, 1536, 3]
+  # Input size as [C, H, W].
+  min_confidence: 0.0001
+  # Detection confidence threshold. Disregard all detections that have a
+  # confidence lower than this value.
+  nms_max_overlap: 0.5
+  # Maximum detection overlap (non-maxima suppression threshold).
+  device: &device "0"
+  # CUDDevice, i.e. 0 or 0,1,2,3 or cpu
+  batch_size: *batch_size
+  # Number of samples in one forward & backward pass.
+  folder_out: "yolov8x_1536_1cls_track_5_24_23_v2_1536"
+  # The output folder
+  class_labels:
+    file: "class_labels_1cls.json"
+    # Config file containing class_labels.
+  queue_size: 30
+  # Number of slot in the queue to store the detection result
+
+identifier:
+  name: "yolov8"
+  # Name of the detector model.
+  model_cfg:
+  # Detector model config.
+    cfg: "yolov8x6.yaml"
+    # YOLOv5 variances.
+    nc: 9
+    # Number of classes.
+  weights:
+  - - "models_zoo/aic24/yolov8x_128_9cls_track_5_24_crop_train_equal_val_v3/weights/best.pt"
+    - "models_zoo/aic24/yolov8x_256_9cls_track_5_24_crop_train_equal_val_v3/weights/best.pt"
+    - "models_zoo/aic24/yolov8x_320_9cls_track_5_24_crop_train_equal_val_v1/weights/best.pt"
+    - "models_zoo/aic24/yolov8x_320_9cls_track_5_24_crop_train_equal_val_v2/weights/best.pt"
+    - "models_zoo/aic24/yolov8x_320_9cls_track_5_24_crop_train_equal_val_v3/weights/best.pt"
+    - "models_zoo/aic24/yolov8x_448_9cls_track_5_24_crop_train_equal_val_v2/weights/best.pt"
+    - "models_zoo/aic24/yolov8x_448_9cls_track_5_24_crop_train_equal_val_v3/weights/best.pt"
+    - "models_zoo/aic24/yolov8x_512_9cls_track_5_24_crop_train_equal_val_v3/weights/best.pt"
+    - "models_zoo/aic24/yolov8x_320_9cls_track_5_24_crop_train_equal_val_v4_videos_gr_0/weights/best.pt"
+    - "models_zoo/aic24/yolov8x_448_9cls_track_5_24_crop_train_equal_val_v4_videos_gr_0/weights/best.pt"
+  - - "models_zoo/aic24/yolov8x_128_9cls_track_5_24_crop_train_equal_val_v3/weights/best.pt"
+    - "models_zoo/aic24/yolov8x_256_9cls_track_5_24_crop_train_equal_val_v3/weights/best.pt"
+    - "models_zoo/aic24/yolov8x_320_9cls_track_5_24_crop_train_equal_val_v1/weights/best.pt"
+    - "models_zoo/aic24/yolov8x_320_9cls_track_5_24_crop_train_equal_val_v2/weights/best.pt"
+    - "models_zoo/aic24/yolov8x_320_9cls_track_5_24_crop_train_equal_val_v3/weights/best.pt"
+    - "models_zoo/aic24/yolov8x_448_9cls_track_5_24_crop_train_equal_val_v2/weights/best.pt"
+    - "models_zoo/aic24/yolov8x_448_9cls_track_5_24_crop_train_equal_val_v3/weights/best.pt"
+    - "models_zoo/aic24/yolov8x_512_9cls_track_5_24_crop_train_equal_val_v3/weights/best.pt"
+    - "models_zoo/aic24/yolov8x_320_9cls_track_5_24_crop_train_equal_val_v4_videos_gr_1/weights/best.pt"
+    - "models_zoo/aic24/yolov8x_448_9cls_track_5_24_crop_train_equal_val_v4_videos_gr_1/weights/best.pt"
+    - "models_zoo/aic24/yolov8x_512_9cls_track_5_24_crop_train_equal_val_v4_videos_gr_1/weights/best.pt"
+  # Pretrained weights file.
+  shape:
+  - [320, 320, 3]
+  - [320, 320, 3]
+  # Input size as [C, H, W].
+  min_confidence: 0.0000
+  # Detection confidence threshold. Disregard all detections that have a
+  # confidence lower than this value.
+  nms_max_overlap: 0.7
+  # Maximum detection overlap (non-maxima suppression threshold).
+  device: *device
+  # CUDDevice, i.e. 0 or 0,1,2,3 or cpu
+  batch_size: 32
+  # Number of samples in one forward & backward pass.
+  folder_out: "yolov8x_320_448_512_9cls_track_5_24_crop_train_equal_val_v3"
+  # The output folder
+  class_labels:
+    file: "class_labels_9cls.json"
+    # Config file containing class_labels.
+  queue_size: 512
+  # Number of slot in the queue to store the identifier result
+  cluster_weights: "models_zoo/aic24/kmeans_cluster/kmeans_model.pkl"
+
+heuristic:
+  name: "heuristic_face"
+  # Name of the detector model.
+  weights:
+    - "models_zoo/aic24/yolov8x_face/yolov8l-face.pt"
+  # Pretrained weights file.
+  shape: [ 320, 320, 3 ]
+  # Input size as [C, H, W].
+  min_confidence: 0.55
+  # Detection confidence threshold. Disregard all detections that have a
+  # confidence lower than this value.
+  nms_max_overlap: 0.0
+  # Maximum detection overlap (non-maxima suppression threshold).
+  device: *device
+  # CUDDevice, i.e. 0 or 0,1,2,3 or cpu
+  folder_out: "heuristic_yolov8x_1536_1cls_track_5_24_23_v2_1536_yolov8x_320_448_512_9cls_track_5_24_crop_train_equal_val_v3"
+  # The output folder
+  class_ids: [1, 2]
+  # class for checking
+
+data_writer:
+  dst: "output_aic24"
+  # Output video file or a directory.
+  shape: *shape
+  # Output size [H, W, C].
+  frame_rate: *frame_rate
+  # Frame rate of the video.
+  fourcc: "mp4v"
+  # Video codec. One of: ["mp4v", "xvid", "mjpg", "wmv1"].
+  queue_size: 30
+  # Number of slot in the queue to store data for writer
+  min_confidence: 0.0001
+  # Detection confidence threshold. Disregard all detections that have a
+  # confidence lower than this value.
+  final_file: "final_result.txt"
+  # Name of file result file
+
+...
