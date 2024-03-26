@@ -41,7 +41,7 @@ detector:
     # YOLOv5 variances.
     nc: 80
     # Number of classes.
-  weights: "models_zoo/aic24/yolov8x_1536_1cls_track_5_24_23_v2/weights/best.pt"
+  weights: "models_zoo/aic24/yolov8x_1536_1cls_track_5_24_v2/weights/best.pt"
   # Pretrained weights file.
   shape: [1536, 1536, 3]
   # Input size as [C, H, W].
@@ -54,7 +54,7 @@ detector:
   # CUDDevice, i.e. 0 or 0,1,2,3 or cpu
   batch_size: *batch_size
   # Number of samples in one forward & backward pass.
-  folder_out: "yolov8x_1536_1cls_track_5_24_23_v2_1536"
+  folder_out: "yolov8x_1536_1cls_track_5_24_v2_1536"
   # The output folder
   class_labels:
     file: "class_labels_1cls.json"
@@ -72,25 +72,9 @@ identifier:
     nc: 9
     # Number of classes.
   weights:
-  - - "models_zoo/aic24/yolov8x_128_9cls_track_5_24_crop_train_equal_val_v3/weights/best.pt"
-    - "models_zoo/aic24/yolov8x_256_9cls_track_5_24_crop_train_equal_val_v3/weights/best.pt"
-    - "models_zoo/aic24/yolov8x_320_9cls_track_5_24_crop_train_equal_val_v1/weights/best.pt"
-    - "models_zoo/aic24/yolov8x_320_9cls_track_5_24_crop_train_equal_val_v2/weights/best.pt"
-    - "models_zoo/aic24/yolov8x_320_9cls_track_5_24_crop_train_equal_val_v3/weights/best.pt"
-    - "models_zoo/aic24/yolov8x_448_9cls_track_5_24_crop_train_equal_val_v2/weights/best.pt"
-    - "models_zoo/aic24/yolov8x_448_9cls_track_5_24_crop_train_equal_val_v3/weights/best.pt"
-    - "models_zoo/aic24/yolov8x_512_9cls_track_5_24_crop_train_equal_val_v3/weights/best.pt"
-    - "models_zoo/aic24/yolov8x_320_9cls_track_5_24_crop_train_equal_val_v4_videos_gr_0/weights/best.pt"
+  - - "models_zoo/aic24/yolov8x_320_9cls_track_5_24_crop_train_equal_val_v4_videos_gr_0/weights/best.pt"
     - "models_zoo/aic24/yolov8x_448_9cls_track_5_24_crop_train_equal_val_v4_videos_gr_0/weights/best.pt"
-  - - "models_zoo/aic24/yolov8x_128_9cls_track_5_24_crop_train_equal_val_v3/weights/best.pt"
-    - "models_zoo/aic24/yolov8x_256_9cls_track_5_24_crop_train_equal_val_v3/weights/best.pt"
-    - "models_zoo/aic24/yolov8x_320_9cls_track_5_24_crop_train_equal_val_v1/weights/best.pt"
-    - "models_zoo/aic24/yolov8x_320_9cls_track_5_24_crop_train_equal_val_v2/weights/best.pt"
-    - "models_zoo/aic24/yolov8x_320_9cls_track_5_24_crop_train_equal_val_v3/weights/best.pt"
-    - "models_zoo/aic24/yolov8x_448_9cls_track_5_24_crop_train_equal_val_v2/weights/best.pt"
-    - "models_zoo/aic24/yolov8x_448_9cls_track_5_24_crop_train_equal_val_v3/weights/best.pt"
-    - "models_zoo/aic24/yolov8x_512_9cls_track_5_24_crop_train_equal_val_v3/weights/best.pt"
-    - "models_zoo/aic24/yolov8x_320_9cls_track_5_24_crop_train_equal_val_v4_videos_gr_1/weights/best.pt"
+  - - "models_zoo/aic24/yolov8x_320_9cls_track_5_24_crop_train_equal_val_v4_videos_gr_1/weights/best.pt"
     - "models_zoo/aic24/yolov8x_448_9cls_track_5_24_crop_train_equal_val_v4_videos_gr_1/weights/best.pt"
     - "models_zoo/aic24/yolov8x_512_9cls_track_5_24_crop_train_equal_val_v4_videos_gr_1/weights/best.pt"
   # Pretrained weights file.
@@ -107,7 +91,7 @@ identifier:
   # CUDDevice, i.e. 0 or 0,1,2,3 or cpu
   batch_size: 32
   # Number of samples in one forward & backward pass.
-  folder_out: "yolov8x_320_448_512_9cls_track_5_24_crop_train_equal_val_v3"
+  folder_out: "yolov8x_320_448_512_9cls_track_5_24_crop_train_equal_val_v4_320_320"
   # The output folder
   class_labels:
     file: "class_labels_9cls.json"
@@ -131,7 +115,7 @@ heuristic:
   # Maximum detection overlap (non-maxima suppression threshold).
   device: *device
   # CUDDevice, i.e. 0 or 0,1,2,3 or cpu
-  folder_out: "heuristic_yolov8x_1536_1cls_track_5_24_23_v2_1536_yolov8x_320_448_512_9cls_track_5_24_crop_train_equal_val_v3"
+  folder_out: "heuristic_yolov8x_1536_1cls_track_5_24_v2_1536_yolov8x_320_448_512_9cls_track_5_24_crop_train_equal_val_v4_320_320"
   # The output folder
   class_ids: [1, 2]
   # class for checking
