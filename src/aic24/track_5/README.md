@@ -62,12 +62,12 @@ After more than 2-3 hours, we get the result:
 1. Download & install Miniconda or Anaconda from https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html
 
 
-2. Open new Terminal, create new conda environment named **aic23_track_5** and activate it with following commands:
+2. Open new Terminal, create new conda environment named **aic24_track_5** and activate it with following commands:
 
 ```shell
-conda create --name aic23_track_5 python=3.10
+conda create --name aic24_track_5 python=3.10
 
-conda activate aic23_track_5
+conda activate aic24_track_5
 
 pip install -r requirements.txt
 ```
@@ -116,12 +116,12 @@ Edge-TSS
 │   │   ├── track_5
 │   │   │   ├── models_zoo
 │   │   │   │   └──yolov8
-│   │   │   │       ├── yolov8x6_1280_1cls_track_5_filtered_helmet
-│   │   │   │       ├── yolov8x6_320_7cls_crop_both_v2
-│   │   │   │       ├── yolov8x6_384_7cls_crop_both_v1
-│   │   │   │       ├── yolov8x6_448_7cls_crop_both_v1
-│   │   │   │       ├── yolov8x6_512_7cls_crop_both_v1
-│   │   │   │       └── yolov8x6_576_7cls_crop_both_v1
+│   │   │   │       ├── yolov8x_1536_1cls_track_5_24_v2
+│   │   │   │       ├── yolov8x_320_9cls_track_5_24_crop_train_equal_val_v4_videos_gr_0
+│   │   │   │       ├── yolov8x_448_9cls_track_5_24_crop_train_equal_val_v4_videos_gr_0
+│   │   │   │       ├── yolov8x_320_9cls_track_5_24_crop_train_equal_val_v4_videos_gr_1
+│   │   │   │       ├── yolov8x_448_9cls_track_5_24_crop_train_equal_val_v4_videos_gr_1
+│   │   │   │       └── yolov8x_512_9cls_track_5_24_crop_train_equal_val_v4_videos_gr_1
 ```
 
 ##### b. Run inference
@@ -129,9 +129,9 @@ Edge-TSS
 And the running script to get the result
 
 ```shell
-cd Edge-TSS/src/aic23/track_5/
+cd Edge-TSS/src/aic24/track_5/
 
-bash script/run_track_5_s2_docker.sh 
+bash script/run_track_5_docker.sh 
 ```
 
 ##### c. Get the result
