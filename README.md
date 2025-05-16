@@ -7,6 +7,7 @@ The **official** source code for the project _**"An Intelligent System For 24/7 
 
 ## Project Goal
 
+
 The primary goal of this project is to develop a state-of-the-art traffic surveillance system optimized for edge devices. This system is designed to extract real-time information under various weather conditions, from the clear, sunny days to the most challenging foggy or rainy scenarios. By leveraging the latest advancements in edge computing, the project aims to provide immediate, accurate traffic data analysis directly where it's most needed – at the edge of the network, closest to the traffic itself.  
 
 ### Addressing the Challenges
