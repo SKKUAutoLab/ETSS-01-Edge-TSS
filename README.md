@@ -13,6 +13,7 @@ The primary goal of this project is to develop a state-of-the-art traffic survei
 
 ### Addressing the Challenges
 
+
 Traffic conditions can change rapidly, influenced by factors such as time of day, accidents, events, and especially weather conditions. Traditional traffic surveillance systems often struggle to adapt to these changes swiftly due to their reliance on central processing. Our project addresses these challenges by:
 
 1. **Enhancing Real-Time Processing:** Utilizing the power of edge computing to process and analyze data in real time, significantly reducing the latency often found in centralized systems.
