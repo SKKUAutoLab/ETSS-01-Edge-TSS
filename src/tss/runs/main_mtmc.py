@@ -13,7 +13,7 @@ from time import perf_counter
 from timeit import default_timer as timer
 
 import yaml
-from src import MTMCTrackingCamera
+from src.camera.mtmc_camera import MTMCTrackingCamera
 from src.configuration import data_dir, load_config
 from src.utils import console
 
